@@ -32,83 +32,83 @@ Para compilar el proyecto utilizando la herramienta Maven, nos dirigimos al dire
 
       mvn package
       
-#bitacora
-##Primera parte crear la aplicación web
+# bitacora
+## Primera parte crear la aplicación web
  1) Cree un proyecto java usando maven.
  2) Cree la clase principal
 
 ![image](img/img1.png)
 ![image](img/img2.png)
-##Segunda Parte: crear imagen para docker y subirla
+## Segunda Parte: crear imagen para docker y subirla
 ![image](img/img.png)
 ![image](img/img_1.png)
 
-####Creamos la aplicación y con Docker compose definimos la estrategia de despliegue sobre Docker Y el Docker file permite definir los archivos mostrado a continuación
+#### Creamos la aplicación y con Docker compose definimos la estrategia de despliegue sobre Docker Y el Docker file permite definir los archivos mostrado a continuación
 ![image](img/img_2.png)
 
-####Nos aseguramos que el contenedor esa corriendo con docker ps
+#### Nos aseguramos que el contenedor esa corriendo con docker ps
 
 ![image](img/img_4.png)
 
-####Accedemos al browser para verificar que esta corriendo en el puerto 8087
+#### Accedemos al browser para verificar que esta corriendo en el puerto 8087
 ![image](img/img_3.png)
 
-####Utilizamos el siguiente comando docker build --tag dockersparkprimer .
+#### Utilizamos el siguiente comando docker build --tag dockersparkprimer .
 ![image](img/img_5.png)
 
-####Verificamos que docker tenga las images creadas correctamente
+#### Verificamos que docker tenga las images creadas correctamente
 ![image](img/img_6.png)
 
-####Creamos los otros 3 contenedores que se solicitan guiandonos de el siguiente diagrama
+#### Creamos los otros 3 contenedores que se solicitan guiandonos de el siguiente diagrama
 ![image](img/img_7.png)
 
-####Creamos contenedores con la siguiente linea
+#### Creamos contenedores con la siguiente linea
 
         docker run -d -p 34002:6000 --name thirddockercontainer virtualizacion_web
 ![image](img/img_8.png)
-####Verificamos que se creen correctamente
+#### Verificamos que se creen correctamente
 ![image](img/img_9.png)
-##Tercera parte subir la imagen a Docker Hub
-####Creamos una referencia de la imagen de nuestro repositorio ya creado en dockerHub
+## Tercera parte subir la imagen a Docker Hub
+#### Creamos una referencia de la imagen de nuestro repositorio ya creado en dockerHub
 ![image](img/img_10.png)
-####Empujamos la imagen al repositorio en DockerHub
+#### Empujamos la imagen al repositorio en DockerHub
 ![image](img/img_11.png)
-####Ya podemos visualizar el contenedor en DockeHub
+#### Ya podemos visualizar el contenedor en DockeHub
 ![image](img/img_12.png)
-##Cuarta parte: AWS
+## Cuarta parte: AWS
 
-####Creamos una instancia en AWS
+#### Creamos una instancia en AWS
 ![image](img/img_13.png)
 ![image](img/img_14.png)
 ![image](img/img_15.png)
-####Instalamos Docker en la maquina aws
+#### Instalamos Docker en la maquina aws
 ![image](img/img_16.png)
 ![image](img/img_17.png)
-####A partir de la imagen creada en Dockerhub cree una instancia de un contenedor docker independiente de la consola (opción “-d”) y con el puerto 6000 enlazado a un puerto físico de su máquina (opción -p):
+#### A partir de la imagen creada en Dockerhub cree una instancia de un contenedor docker independiente de la consola (opción “-d”) y con el puerto 6000 enlazado a un puerto físico de su máquina (opción -p):
 ![image](img/img_18.png)
-####Verificamos que queden las imagenes en docker
+#### Verificamos que queden las imagenes en docker
 ![image](img/img_19.png)
-##Con respecto al diagrama dado ya llevamos lo siguiente
+## Con respecto al diagrama dado ya llevamos lo siguiente
 ![image](img/img_20.png)
-####Creamos un nuevo grupo de seguridad para poder probar la maquina
+#### Creamos un nuevo grupo de seguridad para poder probar la maquina
 ![image](img/img_21.png)
-##Con respecto al diagrama dado ya llevamos lo siguiente
+## Con respecto al diagrama dado ya llevamos lo siguiente
 ![image](img/img_22.png)
-####finalmente podemos probar la apliacion montada en la instancia aws
+#### finalmente podemos probar la apliacion montada en la instancia aws
 ![image](img/img_23.png)
-##Con respecto al diagrama dado ya llevamos lo siguiente
+## Con respecto al diagrama dado ya llevamos lo siguiente
 ![image](img/img_24.png)
-####Finalmente procedemos a terminar la instancia de AWS
+#### Finalmente procedemos a terminar la instancia de AWS
 ![image](img/img_25.png)
 ![image](img/img_27.png)
 ![image](img/img_26.png)
-####Borramos igualmente los pares de llaves cerado para ingresar en la maquina
+#### Borramos igualmente los pares de llaves cerado para ingresar en la maquina
 ![image](img/img_28.png)
-####Ya podemos visualizar la instancia en estado de terminada
+#### Ya podemos visualizar la instancia en estado de terminada
 ![image](img/img_29.png)
-####Finalmente borramos el grupo de seguridad creado para poder probar la maquina funcionando en la instancia AWS
+#### Finalmente borramos el grupo de seguridad creado para poder probar la maquina funcionando en la instancia AWS
 ![image](img/img_30.png)
-##conclusion
+## conclusion
       Aprendimos a crear una maquina virtual de java, con un sistema operativo Linux instalando Docker,
       iniciando e instalándole una imagen de dockerhub, para crear un contenedor y abrir puertos en security groups. 
  # Autor
